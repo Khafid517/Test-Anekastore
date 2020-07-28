@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Produk</title>
+</head>
+<body>
+    <center>
+        <h1>Add Produk</h1>
+        <form action="../editItem" method="POST">
+            <% links.forEach(function(entry){%>
+                <input name="id" placeholder="id" value="<%= entry.id_product %>" readonly required/>
+                <input name="name" placeholder="nama kategori" value="<%= entry.product_name %>" required/>
+                <input name="desc" placeholder="deskripsi produk" value="<%= entry.description %>" required/>
+                <input name="stok" placeholder="stok produk" value="<%= entry.stock %>" required/>
+                <input name="harga" placeholder="harga produk" value="<%= entry.price %>" required/>
+                <input name="type" placeholder="kode kategori produk" value="<%= entry.id_type %>" required/>
+            <button class="btn btn-primary">edit</button>
+            <% }) %>
+        </form>
+    </center>
+</body>
+</html>
